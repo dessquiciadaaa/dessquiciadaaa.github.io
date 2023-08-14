@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>M copio de velev</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: black;
+		}
+		img {
+			display: block;
+			margin: 0 auto;
+			max-width: 100%;
+			max-height: 100%;
+			
+		}
+	</style>
+</head>
+<body>
+	<img src="" onerror="loadImage();" alt="Random Image">
+	<script>
+		var nFotos = 905;
+		var randomNumber = Math.floor(Math.random() * (nFotos - 1)) + 1;
+		var imageSource = "images/imagen (" + randomNumber + ").jpg";
+		var image = document.querySelector("img");
+
+		function loadImage() {
+			if (image.src.indexOf(".jpg") > -1) {
+				image.src = imageSource.replace(".jpg", ".png");
+			} else if (image.src.indexOf(".png") > -1) {
+				image.src = imageSource.replace(".jpg", ".jpeg");
+			} else {
+				image.src = "images/imagen (1).jpg";
+			}
+		}
+
+		image.setAttribute("src", imageSource);
+	</script>
+</body>
+</html>
